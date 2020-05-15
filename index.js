@@ -13,6 +13,7 @@
  * NOTE: This example has been completed for you.
 */
 function addNumbers(num1, num2) {
+  console.log(one)
   return num1 + num2;
 }
 
@@ -36,12 +37,20 @@ function addNumbers(num1, num2) {
  * the returned value should look like: 'Goodbye, Andy. Have a great day.'
  * 
 */
-function sayGoodbye(/* code here */) {
+//function sayGoodbye(/* code here */) {
   /* code here */
+//}//
+
+
+function sayGoodbye(name) {
+  return "Goodbye, " + name + ". Have a great day."
 }
 
+console.log(sayGoodbye("Coleah"));
+// console.log(g)
+
 /**
- * ### Challenge `temperatureCtoF`
+ * ### Challenge 2`temperatureCtoF`
  * 
  * @instructions
  * This function should take an a temperature in celsius as an argument,
@@ -54,15 +63,17 @@ function sayGoodbye(/* code here */) {
  * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
-function temperatureCtoF(/* code here */) {
-  /* code here */
+function temperatureCtoF(temperature) {
+  return Math.round(temperature*9/5 + 32)
 }
 
+
+console.log(temperatureCtoF(24))
 /**
- * ### Challenge `temperatureInF`
+ * ### Challenge 3`temperatureInF`
  * 
  * @instructions
- * This function should take an a temperature and a unit (either 'F' or 'C') as arguments,
+ * This function should take an 'a temperature' and a unit (either 'F' or 'C') as arguments,
  * and return the temperature in fahrenheit, rounded to the nearest whole number. 
  * 
  * For example, if we invoke `temperatureInF`
@@ -75,9 +86,17 @@ function temperatureCtoF(/* code here */) {
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
-  /* code here */
+
+function temperatureInF(temperature, units) {
+  if (units === 'F') {
+    return temperature + units
+  } 
+  else {
+    return temperatureCtoF(temperature) + units
 }
+}
+
+console.log(temperatureInF(24,'C'))
 
 
 /**
@@ -96,10 +115,16 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(id, name, email) {
+  let personObject =
+  {
+    idName: id,
+    nameName: name,
+    emailName: email,
+  }
+  return personObject
 }
-
+console.log(makePersonObject(5, "Leia", "leia@leia.com"))
 /**
  * ### Challenge `getName`
  * 
@@ -113,11 +138,11 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(personObject) {
+  return "Hello, my name is " + personObject.nameName;
 }
 
-
+console.log(getName(makePersonObject("111", "Coleah", "coleah@mattern.com")))
 /**
  * ### Challenge `appleIndex`
  * 
@@ -133,10 +158,17 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
+function appleIndex(fruit) {
+  var index;
+  for (i = 0; i < fruit.length; i ++) {
+    if (fruit[i] === "apple") {
+      index = i
+    }
+  }
+  return index
 }
 
+console.log(appleIndex([ 'orange', 'grape', 'apple', 'banana', 'mango' ]))
 /**
  * ### Challenge `isItAnApple`
  * 
@@ -152,7 +184,7 @@ function appleIndex(/* code here */) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
+function isItAnApple( ) {
   /* code here */
 }
 
