@@ -293,7 +293,7 @@ function getModelYears(carArray) {
   }
   return carYears
 }
-console.log(getModelYears(inventory))
+getModelYears(inventory)
 /**
  * ### Challenge `getCarInfoById`
  *  * * THIS ONE IS A STRETCH GOAL. ATTEMPT IT ONLY AFTER
